@@ -1,3 +1,4 @@
+/* Изменение Фона страницы */
 html {
   font-family: Roboto, sans-serif;
   --primary-color: #2f80ed;
@@ -5,6 +6,7 @@ html {
   --bg-color: #ffffff;
 }
 
+/* Тема для темного режима */
 html[data-theme='dark'] {
   --primary-color: #2f80ed;
   --secondary-color: #ffffff;
@@ -85,19 +87,17 @@ section {
   }
 }
 
+/* Переключатель темы */
 .theme-switch-wrapper {
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.theme-switch-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .theme-switch-wrapper em {
@@ -127,7 +127,6 @@ section {
   position: absolute;
   right: 0;
   top: 0;
-  -webkit-transition: .4s;
   transition: .4s;
 }
 
@@ -138,7 +137,6 @@ section {
   height: 26px;
   left: 4px;
   position: absolute;
-  -webkit-transition: .4s;
   transition: .4s;
   width: 26px;
 }
@@ -148,8 +146,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-          transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 .slider.round {
@@ -162,9 +159,334 @@ input:checked + .slider:before {
 
 html.transition,
 html.transition * {
-  -webkit-transition: all 750ms !important;
   transition: all 750ms !important;
-  -webkit-transition-delay: 0 !important;
-          transition-delay: 0 !important;
+  transition-delay: 0 !important;
 }
-/*# sourceMappingURL=main.css.map */
+
+/* Стили кнопок */
+button {
+  --color: #0077ff;
+  font-family: inherit;
+  display: inline-block;
+  width: 14em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+}
+
+button::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+button:hover {
+  color: white;
+}
+
+button:before {
+  top: 100%;
+  left: 100%;
+  transition: .3s all;
+}
+
+button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+/* Стили для кнопок в разделе "Journal" */
+h1.title {
+  padding: 15px;
+  font-size: 18px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #68767a;
+  color: white;
+  width: fit-content;
+  margin: 40px auto;
+  position: relative;
+  z-index: 2;
+}
+
+#tabs-container {
+  width: 30%;
+  margin: 10px auto;
+  position: relative;
+  z-index: 1;
+}
+
+#tabs {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  position: relative;
+}
+
+.tabButton {
+  display: block;
+  min-width: 120px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tab {
+  display: none;
+}
+
+.active {
+  background-color: #ddd;
+}
+
+/* Стили для новых кнопок во вкладке "Загрузка оценок" */
+#uploadButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#uploadButtons label.btn,
+#uploadButtons button.btn {
+  margin: 10px;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+#uploadButtons label.btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#uploadButtons button.btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#csvTable {
+  display: none;
+  border-collapse: collapse;
+  width: 70%;
+  margin: 20px auto;
+}
+
+#csvTable th, #csvTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#csvTable th {
+  background-color: #f2f2f2;
+}
+
+#editTab{
+  margin-top: 70px;
+  margin-left: 10px;
+  position: relative;
+}
+
+#existingDataTable {
+  position: absolute;
+  border-collapse: collapse;
+  width: 50%;
+  margin-top: 20px;
+  margin-top: -1px; /* Отрицательный отступ сверху */
+}
+
+#existingDataTable th,
+#existingDataTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#existingDataTable th {
+  background-color: #f2f2f2;
+}
+
+#studentInputContainer {
+  width: 50%;
+  margin-left: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+#studentInputContainer input {
+  width: 300px; /* Измените значение по вашему усмотрению */
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#studentInputContainer label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: var(--primary-color);
+}
+
+#studentInputContainer input {
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#addStudentBtn {
+  margin-top: 10px;
+  margin-left: 90px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#addStudentBtn:hover {
+  background-color: var(--primary-color);
+}
+
+#applyChangesBtn {
+  margin-top: 15px;
+  margin-left: 73px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+#applyChangesBtn:hover {
+  background-color: var(--primary-color);
+}
+
+#statsTable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#statsTable th, #statsTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#statsTable th {
+  background-color: #f2f2f2;
+}
+
+#statsTableBody tr:hover {
+  background-color: #f5f5f5;
+}
+
+#myChart{
+  margin-top: -150px;
+}
+
+/* Стили для блока помощи */
+.help-block1 {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Стили для блока помощи */
+.help-block2 {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Стили для блока помощи */
+.help-block3 {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Стили для блока помощи */
+.help-block4 {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* Стили для заголовков в блоке помощи */
+.help-block h2 {
+  color: #333;
+  margin-top: 0;
+}
+
+/* Стили для заголовков в блоке помощи */
+.help-block h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+/* Стили для заголовков в блоке помощи */
+.help-block h4 {
+  color: #333;
+  margin-top: 0;
+}
+
+/* Стили для заголовков в блоке помощи */
+.help-block h5 {
+  color: #333;
+  margin-top: 0;
+}

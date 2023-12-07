@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>My CV</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/fav.webp" type="image">
+  <title>Главная страница</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-light" style="background-color: rgb(255, 0, 0)">
+      <div class="cv">
+        <a class="navbar-brand" href="index.html">
+          <span style="color:rgb(255, 255, 255); font-size: 80px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Danil</span>
+          <span style="font-size: 80px;">Journal</span>
+        </a>
+      </div>
+    </nav>
+  </header>
   <div class="cv">
     <section>
-      <h1>John Smitt</h1>
-      <h2>Web developer</h2>
-
+      <h1>Кушко Данил</h1>
+      <h2>Разработчик данного журнала</h2>
       <div class="theme-switch-wrapper">
         <label class="theme-switch">
           <input type="checkbox" class="theme-switch__checkbox"/>
           <div class="slider round"></div>
         </label>
-        <span class="theme-switch__label">Dark Mode</span>
+        <span class="theme-switch__label">Тёмная темка</span>
       </div>
 
       <div class="contacts">
@@ -28,73 +37,34 @@
             Github
           </div>
           <div class="contact__value">
-            <a href="https://github.com/hiprofessional/">github.com/hiprofessional</a>
-          </div>
-        </div>
-        <div class="contact">
-          <div class="contact__type">
-            Email
-          </div>
-          <div class="contact__value">
-            <a href="mailto:hi.pro.timur@gmail.com">hi.pro.timur@gmail.com</a>
+            <a href="https://github.com/DanilKushko/">github.com/DanilKushko/</a>
           </div>
         </div>
       </div>
       <div class="description">
-        IT Professional with over 10 years of experience specializing in <b>Web development</b>.
-        I can create effective web applications with high support level.
-        My greatest strength is business awareness, which enables me to
-        permanently streamline infrstructure and application.
+        Этот журнал создан для учебных целей. <b>Автор старался</b>.
+        Если вы хотите оценить задание выполнение по ТЗ, жми кнопку ниже       
       </div>
+      <button>
+        <a href="journal.html">Журнал</a>
+      </button>
     </section>
-
     <section>
-      <h3>Experience</h3>
-
-      <div class="experience">
-        <div class="experience__date">12.11.2011 - present</div>
-        <div class="experience__description">
-          <div class="experience__name">Software and Solutions Developer</div>
-          <div class="experience__company">Big company</div>
-          <div class="experience__details">
-            <ul>
-              <li>Create MVC applications</li>
-              <li>Create frontend using Angular</li>
-              <li>Create databases using MS SQL</li>
-              <li>Create Reports using Reporting Services and MS SQL</li>
-              <li>Support various applications</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="experience">
-        <div class="experience__date">
-          01.05.2010 - 12.11.2011
-        </div>
-
-        <div class="experience__description">
-          <div class="experience__name">Web Developer</div>
-          <div class="experience__company">Small company</div>
-          <div class="experience__details">
-            <ul>
-              <li>Create websites using Wordpress</li>
-              <li>Make content for blogs</li>
-              <li>Create online calculators</li>
-              <li>Support various applications</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h3>Skills</h3>
+      <h3>Технологии о которых слышал автор:</h3>
       <div>
-        Angular, Figma, Sketch, HTML, CSS, SQL, C#, TypeScript, JavaScript
+        Python, C++, Django, Figma, HTML, CSS, JavaScript,
+        DjangoORM, DRF, API, SQL, Git, ООП, SQLite,
+        Postgresql, Unittest, REST API, Telegram API,
+        AOuth 2.0, JWT+Djoiser
       </div>
     </section>
   </div>
-
-  <script src='js/script.js'></script>
+  <script src='js/scripts.js'></script>
+  <footer class="border-top py-3" style="text-align: center;">
+    <p>© 2023 Copyright
+      <span style="color:rgb(47, 128, 237); font-size: 20px;">Danil</span>
+      <span style="font-size: 20px;">Journal</span>
+    </p>  
+  </footer>
 </body>
 </html>
